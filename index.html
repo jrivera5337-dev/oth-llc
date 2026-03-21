@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTH LLC — Over The Horizon</title>
+  <meta name="description" content="OTH LLC is a veteran-owned EOD and explosives company based in Ridgecrest, CA. Explosive engraving, special charges, and demolition products." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #BA7517;
+      --amber-dark: #854F0B;
+      --bg: #0e0e0e;
+      --bg-secondary: #161616;
+      --bg-tertiary: #1e1e1e;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(186,117,23,0.6);
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-tertiary: #5a5754;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-links a.coming { color: var(--text-tertiary); font-size: 11px; }
+    .nav-soon { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--text-tertiary); padding: 1px 5px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
+
+    /* HERO */
+    .hero { padding: 96px 40px 80px; border-bottom: 0.5px solid var(--border); }
+    .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 20px; }
+    .hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: 84px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; line-height: 0.92; color: var(--text-primary); max-width: 800px; margin-bottom: 28px; }
+    .hero-title span { color: var(--amber); }
+    .hero-sub { font-size: 16px; color: var(--text-secondary); max-width: 520px; line-height: 1.75; margin-bottom: 40px; }
+    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 14px 32px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--amber-dark); }
+    .btn-ghost { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: var(--text-secondary); border: 0.5px solid rgba(255,255,255,0.2); padding: 14px 32px; border-radius: 4px; cursor: pointer; transition: all 0.2s; display: inline-block; }
+    .btn-ghost:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.4); }
+
+    /* CREDS */
+    .creds { display: flex; flex-wrap: wrap; border-bottom: 0.5px solid var(--border); }
+    .cred { flex: 1; min-width: 150px; padding: 28px 32px; border-right: 0.5px solid var(--border); }
+    .cred:last-child { border-right: none; }
+    .cred-val { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; color: var(--amber); line-height: 1; margin-bottom: 6px; }
+    .cred-label { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+
+    /* AMBER RULE */
+    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 20px; }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1; margin-bottom: 16px; }
+    .section-body { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px; }
+
+    /* ENGRAVING FEATURE */
+    .engraving-feature { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--border); }
+    .eng-left { padding: 64px 40px; border-right: 0.5px solid var(--border); }
+    .eng-right { display: grid; grid-template-columns: 1fr 1fr; }
+    .eng-img { background: var(--bg-secondary); border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+    .eng-img:nth-child(2) { border-right: none; }
+    .eng-img:nth-child(3) { border-bottom: none; }
+    .eng-img:nth-child(4) { border-right: none; border-bottom: none; }
+    .eng-img-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); }
+    .unique-badge { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); border: 0.5px solid var(--amber); padding: 4px 10px; border-radius: 3px; margin-bottom: 16px; }
+    .eng-details { display: flex; flex-direction: column; gap: 0; margin-bottom: 32px; }
+    .eng-detail-row { display: flex; gap: 14px; padding: 12px 0; border-bottom: 0.5px solid var(--border); align-items: flex-start; }
+    .eng-detail-row:first-child { border-top: 0.5px solid var(--border); }
+    .eng-detail-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; color: var(--amber); min-width: 20px; padding-top: 2px; }
+    .eng-detail-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .eng-detail-text strong { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); display: block; margin-bottom: 3px; letter-spacing: 0.04em; }
+
+    /* BUTTON PANEL */
+    .button-panel { background: var(--amber); padding: 48px 40px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .button-panel-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 700; text-transform: uppercase; color: #fff; line-height: 1; margin-bottom: 8px; }
+    .button-panel-sub { font-size: 14px; color: rgba(255,255,255,0.8); }
+    .btn-white { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: #fff; color: var(--amber); border: none; padding: 14px 32px; border-radius: 4px; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; display: inline-block; }
+    .btn-white:hover { opacity: 0.9; }
+
+    /* PRODUCTS */
+    .products-header { padding: 44px 40px 28px; border-bottom: 0.5px solid var(--border); }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 0.5px solid var(--border); }
+    .prod-col { padding: 32px 28px; border-right: 0.5px solid var(--border); }
+    .prod-col:last-child { border-right: none; }
+    .prod-img { background: var(--bg-secondary); border: 0.5px solid var(--border); border-radius: 8px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .prod-img-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); }
+    .prod-cat { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .prod-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 8px; }
+    .prod-price { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .prod-price span { font-size: 12px; font-weight: 400; color: var(--text-secondary); }
+    .btn-sm-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
+    .btn-sm-primary:hover { background: var(--amber-dark); }
+
+    /* COMING BAND */
+    .coming-band { padding: 28px 40px; border-bottom: 0.5px solid var(--border); background: var(--bg-secondary); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .coming-text { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-tertiary); }
+    .coming-items { display: flex; gap: 8px; flex-wrap: wrap; }
+    .coming-item { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--border); padding: 4px 10px; border-radius: 3px; }
+
+    /* FOOTER */
+    footer { padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 12px; color: var(--text-tertiary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 52px; }
+      .engraving-feature { grid-template-columns: 1fr; }
+      .eng-right { display: none; }
+      .products-grid { grid-template-columns: 1fr; }
+      .prod-col { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .creds { flex-direction: column; }
+      .cred { border-right: none; border-bottom: 0.5px solid var(--border); }
+      nav { padding: 16px 20px; }
+      .hero { padding: 64px 20px 56px; }
+      .eng-left { padding: 40px 20px; }
+      .button-panel { padding: 36px 20px; }
+      .products-header, .coming-band, footer { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">OTH<span>.</span>LLC</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" class="coming">Services <span class="nav-soon">Soon</span></a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Veteran-Owned &nbsp;·&nbsp; Master EOD &nbsp;·&nbsp; Ridgecrest, CA</p>
+    <h1 class="hero-title">Beyond The<br>Threat <span>Horizon.</span></h1>
+    <p class="hero-sub">OTH LLC brings 50+ years of collective EOD experience to two things right now: explosive engraving nobody else is doing, and demolition products vetted by operators who use them.</p>
+    <div class="hero-actions">
+      <a href="engraving.html" class="btn-primary">Explosive Engraving</a>
+      <a href="products.html" class="btn-ghost">Shop Products</a>
+    </div>
+  </section>
+
+  <div class="creds">
+    <div class="cred"><div class="cred-val">50+</div><div class="cred-label">Years collective EOD experience</div></div>
+    <div class="cred"><div class="cred-val">Master</div><div class="cred-label">EOD qualified</div></div>
+    <div class="cred"><div class="cred-val">Combat</div><div class="cred-label">Veterans — multiple deployments</div></div>
+    <div class="cred"><div class="cred-val">100%</div><div class="cred-label">Veteran owned &amp; operated</div></div>
+  </div>
+
+  <div class="engraving-feature">
+    <div class="eng-left">
+      <span class="unique-badge">One of a Kind</span>
+      <p class="section-eyebrow">Explosive Engraving</p>
+      <div class="amber-rule"></div>
+      <h2 class="section-title">Art Through<br>Energetics.</h2>
+      <p class="section-body">Precision image transfer onto metal using energetic materials. Custom logos, lettering, and geometric patterns — permanently marked by a controlled explosive event. Nobody else is doing this.</p>
+      <div class="eng-details">
+        <div class="eng-detail-row">
+          <span class="eng-detail-num">01</span>
+          <div class="eng-detail-text"><strong>You Push The Button</strong>Be there when it happens. Supervised by a Master EOD operator, you initiate the charge yourself. No extra cost.</div>
+        </div>
+        <div class="eng-detail-row">
+          <span class="eng-detail-num">02</span>
+          <div class="eng-detail-text"><strong>Full Video Documentation</strong>Setup, charge, detonation, result — all filmed and delivered with your piece.</div>
+        </div>
+        <div class="eng-detail-row">
+          <span class="eng-detail-num">03</span>
+          <div class="eng-detail-text"><strong>Brass, Copper, Aluminum, Steel</strong>Custom logos, text, and geometric patterns on your choice of metal.</div>
+        </div>
+      </div>
+      <a href="engraving.html" class="btn-primary">Order an Engraving</a>
+    </div>
+    <div class="eng-right">
+      <div class="eng-img"><span class="eng-img-label">Photo Coming Soon</span></div>
+      <div class="eng-img"><span class="eng-img-label">Photo Coming Soon</span></div>
+      <div class="eng-img"><span class="eng-img-label">Photo Coming Soon</span></div>
+      <div class="eng-img"><span class="eng-img-label">Photo Coming Soon</span></div>
+    </div>
+  </div>
+
+  <div class="button-panel">
+    <div>
+      <div class="button-panel-title">You Can Push The Button.</div>
+      <div class="button-panel-sub">Come to Ridgecrest, CA. Watch your piece get made. Initiate the charge yourself.</div>
+    </div>
+    <a href="engraving.html" class="btn-white">Book an Experience</a>
+  </div>
+
+  <div class="products-header">
+    <p class="section-eyebrow">Products</p>
+    <div class="amber-rule"></div>
+    <h2 class="section-title">Shop What We Use.</h2>
+    <p style="font-size:13px;color:var(--text-secondary);">Demolition accessories vetted by operators. Card and Apple Pay.</p>
+  </div>
+
+  <div class="products-grid">
+    <div class="prod-col">
+      <div class="prod-img"><span class="prod-img-label">Photo Coming Soon</span></div>
+      <p class="prod-cat">Accessory</p>
+      <p class="prod-name">End Caps &amp; Crimps</p>
+      <p class="prod-price">$XX <span>/ pack</span></p>
+      <a href="products.html" class="btn-sm-primary">View Product</a>
+    </div>
+    <div class="prod-col">
+      <div class="prod-img"><span class="prod-img-label">Photo Coming Soon</span></div>
+      <p class="prod-cat">Accessory</p>
+      <p class="prod-name">Tape &amp; Securing Materials</p>
+      <p class="prod-price">$XX <span>/ roll</span></p>
+      <a href="products.html" class="btn-sm-primary">View Product</a>
+    </div>
+    <div class="prod-col">
+      <div class="prod-img"><span class="prod-img-label">Photo Coming Soon</span></div>
+      <p class="prod-cat">Accessory</p>
+      <p class="prod-name">Safety Fuse</p>
+      <p class="prod-price">$XX <span>/ ft</span></p>
+      <a href="products.html" class="btn-sm-primary">View Product</a>
+    </div>
+  </div>
+
+  <div class="coming-band">
+    <span class="coming-text">More Coming to OTH</span>
+    <div class="coming-items">
+      <span class="coming-item">Special Charges</span>
+      <span class="coming-item">EOD Services</span>
+      <span class="coming-item">LE Breaching Training</span>
+      <span class="coming-item">Government Contracts</span>
+      <span class="coming-item">UAV Warhead Integration</span>
+      <span class="coming-item">Small Scale Testing</span>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">OTH<span>.</span>LLC</div>
+    <div class="footer-links">
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 Over The Horizon LLC. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
