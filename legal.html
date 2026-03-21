@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal — OTH LLC</title>
+  <meta name="description" content="Terms of Use, Privacy Policy, Disclaimer, and Regulatory Notice for OTH LLC." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #BA7517;
+      --amber-dark: #854F0B;
+      --bg: #0e0e0e;
+      --bg-secondary: #161616;
+      --border: rgba(255,255,255,0.08);
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-tertiary: #5a5754;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); }
+    a { color: inherit; text-decoration: none; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-links a.coming { color: var(--text-tertiary); font-size: 11px; }
+    .nav-soon { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--text-tertiary); padding: 1px 5px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
+
+    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 20px; }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+
+    .page-header { padding: 64px 40px 40px; border-bottom: 0.5px solid var(--border); }
+    .page-title { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 700; text-transform: uppercase; line-height: 0.95; color: var(--text-primary); margin-bottom: 20px; }
+    .page-sub { font-size: 13px; color: var(--text-secondary); line-height: 1.7; max-width: 580px; }
+    .page-date { font-size: 12px; color: var(--text-tertiary); margin-top: 10px; }
+
+    .toc { padding: 24px 40px; border-bottom: 0.5px solid var(--border); background: var(--bg-secondary); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .toc-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-tertiary); margin-right: 8px; }
+    .toc-link { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); padding: 4px 12px; border: 0.5px solid var(--amber); border-radius: 3px; transition: all 0.2s; }
+    .toc-link:hover { background: var(--amber); color: #fff; }
+
+    .legal-section { padding: 52px 40px; border-bottom: 0.5px solid var(--border); display: grid; grid-template-columns: 220px 1fr; gap: 56px; }
+    .section-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 10px; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1.1; position: sticky; top: 80px; }
+    .section-body { font-size: 14px; color: var(--text-secondary); line-height: 1.85; }
+    .section-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); margin: 28px 0 10px; }
+    .section-body h3:first-child { margin-top: 0; }
+    .section-body p { margin-bottom: 14px; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body ul { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .section-body ul li { padding-left: 16px; position: relative; font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+    .section-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-size: 11px; top: 4px; }
+
+    footer { padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); margin-top: 28px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 12px; color: var(--text-tertiary); }
+
+    @media (max-width: 768px) {
+      .legal-section { grid-template-columns: 1fr; gap: 24px; padding: 40px 20px; }
+      .section-title { position: static; }
+      nav { padding: 16px 20px; }
+      .page-header, .toc, footer { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">OTH<span>.</span>LLC</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" class="coming">Services <span class="nav-soon">Soon</span></a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <p class="section-eyebrow">OTH LLC — Legal</p>
+    <h1 class="page-title">Legal Notice &amp;<br>Policies.</h1>
+    <div class="amber-rule"></div>
+    <p class="page-sub">These policies govern your use of the OTH LLC website and any transactions or inquiries conducted through it. By accessing this site, you agree to the terms outlined below.</p>
+    <p class="page-date">Last updated: March 2026</p>
+  </div>
+
+  <div class="toc">
+    <span class="toc-label">Jump To</span>
+    <a class="toc-link" href="#terms">Terms of Use</a>
+    <a class="toc-link" href="#privacy">Privacy Policy</a>
+    <a class="toc-link" href="#disclaimer">Disclaimer</a>
+    <a class="toc-link" href="#regulatory">Regulatory Notice</a>
+  </div>
+
+  <div class="legal-section" id="terms">
+    <div>
+      <p class="section-num">01</p>
+      <h2 class="section-title">Terms<br>of Use</h2>
+    </div>
+    <div class="section-body">
+      <h3>Acceptance of Terms</h3>
+      <p>By accessing or using the OTH LLC website (oth-llc.us), you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use this site.</p>
+      <h3>Permitted Use</h3>
+      <p>This website is intended for lawful purposes only. You may use this site to learn about OTH LLC's capabilities, submit inquiries, and purchase non-regulated accessories. Any use of this site in connection with unlawful activity is strictly prohibited.</p>
+      <h3>Prohibited Uses</h3>
+      <ul>
+        <li>Using this site to attempt to acquire explosive materials without proper federal licensing and credentials</li>
+        <li>Submitting false or fraudulent credential documentation in connection with any inquiry or purchase</li>
+        <li>Using information obtained from this site to facilitate any illegal act</li>
+        <li>Attempting to circumvent any access controls, security measures, or verification processes</li>
+        <li>Reproducing, distributing, or commercially exploiting any content on this site without written permission from OTH LLC</li>
+      </ul>
+      <h3>Intellectual Property</h3>
+      <p>All content on this site — including text, images, charge documentation, video content, and design — is the property of Over The Horizon LLC. Special charge builds, engraving methods, and proprietary processes described or demonstrated on this site are protected intellectual property. Reproduction or reverse engineering of any OTH LLC process without written authorization is prohibited.</p>
+      <h3>Changes to Terms</h3>
+      <p>OTH LLC reserves the right to update these terms at any time. Continued use of the site after changes are posted constitutes acceptance of the updated terms.</p>
+    </div>
+  </div>
+
+  <div class="legal-section" id="privacy">
+    <div>
+      <p class="section-num">02</p>
+      <h2 class="section-title">Privacy<br>Policy</h2>
+    </div>
+    <div class="section-body">
+      <h3>Information We Collect</h3>
+      <p>When you submit a contact form or make a purchase on this site, we collect the information you provide — including your name, email address, phone number, organization, and message content. For credential-verified purchases, we collect and retain required licensing documentation as required by federal law.</p>
+      <h3>How We Use Your Information</h3>
+      <ul>
+        <li>To respond to your inquiry or process your order</li>
+        <li>To verify credentials and licensing as required for explosive materials transactions</li>
+        <li>To comply with ATF recordkeeping and federal regulatory requirements</li>
+        <li>To contact you regarding your inquiry or order status</li>
+      </ul>
+      <h3>What We Do Not Do</h3>
+      <p>OTH LLC does not sell, rent, or share your personal information with third parties for marketing purposes. Credential documentation submitted for explosive materials inquiries is retained solely for regulatory compliance and is not shared beyond what is required by law.</p>
+      <h3>Data Retention</h3>
+      <p>Contact and inquiry records are retained for a period consistent with applicable federal recordkeeping requirements. Credential documentation is retained as required by ATF regulations governing explosive materials transactions.</p>
+      <h3>Cookies</h3>
+      <p>This site may use basic cookies to support site functionality. We do not use tracking cookies for advertising purposes.</p>
+      <h3>Contact Regarding Privacy</h3>
+      <p>For questions about how your information is handled, contact us directly at josh@oth-llc.us or (760) 977-7308.</p>
+    </div>
+  </div>
+
+  <div class="legal-section" id="disclaimer">
+    <div>
+      <p class="section-num">03</p>
+      <h2 class="section-title">Disclaimer</h2>
+    </div>
+    <div class="section-body">
+      <h3>No Unlawful Use</h3>
+      <p>OTH LLC provides explosive materials, services, and information exclusively for lawful purposes. Nothing on this site is intended to facilitate, encourage, or assist in any illegal activity. All explosive materials transactions are subject to federal law, ATF regulation, and credential verification. OTH LLC reserves the right to refuse any transaction at its sole discretion.</p>
+      <h3>Limitation of Liability</h3>
+      <p>OTH LLC is not liable for any damages arising from the misuse of information presented on this site, the misuse of any products purchased through this site, or any unauthorized use of explosive materials. Purchasers and end users are solely responsible for ensuring their activities comply with all applicable federal, state, and local laws.</p>
+      <h3>Informational Content</h3>
+      <p>Videos, descriptions, and technical content on this site — including the Special Charges section — are provided for educational and demonstration purposes only. OTH LLC does not assume liability for any attempt to replicate demonstrated techniques without proper training, licensing, and supervision. Explosive ordnance work is inherently dangerous and must only be conducted by trained and licensed professionals.</p>
+      <h3>No Warranty</h3>
+      <p>This site and its content are provided "as is" without warranty of any kind. OTH LLC makes no representations regarding the accuracy or completeness of any information on this site and reserves the right to update or remove content at any time.</p>
+    </div>
+  </div>
+
+  <div class="legal-section" id="regulatory">
+    <div>
+      <p class="section-num">04</p>
+      <h2 class="section-title">Regulatory<br>Notice</h2>
+    </div>
+    <div class="section-body">
+      <h3>ATF Compliance</h3>
+      <p>Over The Horizon LLC operates in full compliance with the Safe Explosives Act and all applicable regulations administered by the Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF). All explosive materials transactions conducted by OTH LLC are subject to federal licensing, background check, and recordkeeping requirements as set forth in 18 U.S.C. Chapter 40 and 27 CFR Part 555.</p>
+      <h3>Purchaser Requirements</h3>
+      <p>The purchase of explosive materials from OTH LLC requires the purchaser to hold a valid Federal Explosives License or Permit (FEL/FEP) issued by the ATF, or to otherwise qualify as an authorized purchaser under federal law. OTH LLC verifies all credentials prior to fulfillment of any explosive materials order. Submission of fraudulent or invalid documentation is a federal crime.</p>
+      <h3>Law Enforcement</h3>
+      <p>Sales of explosive materials to law enforcement agencies are conducted in accordance with applicable federal exemptions and agency procurement requirements. Local law enforcement agencies must have a certified explosive breacher on staff. Federal agencies must submit purchase requests on official agency letterhead. All LE and government transactions are subject to OTH LLC verification and follow-up prior to fulfillment.</p>
+      <h3>State and Local Law</h3>
+      <p>Purchasers are responsible for ensuring compliance with all applicable state and local laws governing the purchase, transport, storage, and use of explosive materials in their jurisdiction. OTH LLC makes no representations regarding the legality of any transaction under state or local law.</p>
+      <h3>Reporting Obligations</h3>
+      <p>OTH LLC complies with all federal reporting obligations regarding explosive materials transactions, thefts, losses, and suspicious activity as required by ATF regulations. Any suspected theft or misuse of explosive materials should be reported immediately to the ATF at 1-888-ATF-TIPS.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">OTH<span>.</span>LLC</div>
+    <div class="footer-links">
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 Over The Horizon LLC. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
