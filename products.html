@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products — OTH LLC</title>
-  <meta name="description" content="Demolition materials and accessories sourced and vetted by operators with 50+ years of field experience." />
+  <meta name="description" content="OTH LLC demolition materials and accessories. Coming soon." />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,18 +13,15 @@
       --amber-dark: #854F0B;
       --bg: #0e0e0e;
       --bg-secondary: #161616;
-      --bg-tertiary: #1e1e1e;
       --border: rgba(255,255,255,0.08);
       --text-primary: #f0ede8;
       --text-secondary: #9a9690;
       --text-tertiary: #5a5754;
-      --success: #4a9e6b;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; display: flex; flex-direction: column; }
     a { color: inherit; text-decoration: none; }
 
-    /* NAV */
     nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; flex-wrap: wrap; gap: 12px; }
     .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
     .nav-logo span { color: var(--amber); }
@@ -34,64 +31,15 @@
     .nav-links a.coming { color: var(--text-tertiary); font-size: 11px; }
     .nav-soon { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--text-tertiary); padding: 1px 5px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
 
-    /* SHARED */
-    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 20px; }
-    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
-    .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
+    .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 80px 40px; }
+    .content { max-width: 560px; }
+    .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 24px; }
+    .title { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 700; text-transform: uppercase; line-height: 0.95; color: var(--text-primary); margin-bottom: 20px; }
+    .body { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; }
+    .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 14px 32px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--amber-dark); }
-    .btn-ghost { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background: transparent; color: var(--text-secondary); border: 0.5px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 4px; cursor: pointer; transition: all 0.2s; display: inline-block; }
-    .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
 
-    /* PAGE HEADER */
-    .page-header { padding: 72px 40px 48px; border-bottom: 0.5px solid var(--border); }
-    .page-title { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 700; text-transform: uppercase; line-height: 0.95; color: var(--text-primary); margin-bottom: 20px; }
-    .page-sub { font-size: 15px; color: var(--text-secondary); line-height: 1.8; max-width: 620px; }
-
-    /* REQUIREMENTS */
-    .requirements { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 0.5px solid var(--border); }
-    .req-col { padding: 40px 32px; border-right: 0.5px solid var(--border); }
-    .req-col:last-child { border-right: none; }
-    .req-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
-    .req-title { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1.05; margin-bottom: 20px; }
-    .req-list { list-style: none; display: flex; flex-direction: column; }
-    .req-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
-    .req-item:last-child { border-bottom: none; }
-    .req-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; color: var(--amber); min-width: 20px; padding-top: 2px; }
-    .req-item-title { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 3px; letter-spacing: 0.04em; }
-    .req-item-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
-    .req-note { font-size: 12px; color: var(--text-secondary); line-height: 1.75; margin-top: 16px; }
-    .req-callout { margin-top: 16px; border: 0.5px solid var(--amber); border-radius: 8px; padding: 14px 16px; }
-    .req-callout-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
-    .req-callout-text { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
-    .req-callout-link { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); display: inline-block; margin-top: 8px; }
-
-    /* SECTION LABEL */
-    .section-label { padding: 14px 40px; border-bottom: 0.5px solid var(--border); background: var(--bg-secondary); display: flex; align-items: center; justify-content: space-between; }
-    .section-label-text { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-tertiary); }
-    .badge { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
-    .badge-inquiry { color: var(--amber); border: 0.5px solid var(--amber); }
-    .badge-purchase { color: var(--success); border: 0.5px solid var(--success); }
-
-    /* PRODUCT GRID */
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); border-bottom: 0.5px solid var(--border); }
-    .product-card { border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; transition: background 0.15s; }
-    .product-card:hover { background: var(--bg-secondary); }
-    .product-img { background: var(--bg-tertiary); border: 0.5px solid var(--border); border-radius: 8px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
-    .product-img-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); }
-    .product-cat { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); }
-    .product-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1.1; }
-    .product-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
-    .product-price { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-primary); }
-    .product-price span { font-size: 13px; font-weight: 400; color: var(--text-secondary); }
-    .pay-icons { display: flex; gap: 8px; align-items: center; }
-    .pay-icon { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--border); padding: 2px 7px; border-radius: 3px; }
-
-    /* CTA */
-    .cta-band { padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; border-bottom: 0.5px solid var(--border); }
-    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 6px; }
-    .cta-sub { font-size: 14px; color: var(--text-secondary); }
-
-    /* FOOTER */
     footer { padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); }
     .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
     .footer-logo span { color: var(--amber); }
@@ -100,14 +48,10 @@
     .footer-links a:hover { color: var(--amber); }
     .footer-copy { font-size: 12px; color: var(--text-tertiary); }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .requirements { grid-template-columns: 1fr; }
-      .req-col { border-right: none; border-bottom: 0.5px solid var(--border); }
-      .req-col:last-child { border-bottom: none; }
       nav { padding: 16px 20px; }
-      .page-header, .cta-band, footer { padding-left: 20px; padding-right: 20px; }
-      .section-label { padding-left: 20px; padding-right: 20px; }
+      .main { padding: 60px 20px; }
+      footer { padding-left: 20px; padding-right: 20px; }
     }
   </style>
 </head>
@@ -121,193 +65,19 @@
       <a href="special-charges.html">Special Charges</a>
       <a href="products.html" class="active">Products</a>
       <a href="contact.html">Contact</a>
-      <a href="#" class="coming">Services <span class="nav-soon">Soon</span></a>
+      <a href="services.html" class="coming">Services <span class="nav-soon">Soon</span></a>
     </div>
   </nav>
 
-  <div class="page-header">
-    <p class="section-eyebrow">OTH LLC — Products</p>
-    <h1 class="page-title">Shop What<br>We Use.</h1>
-    <div class="amber-rule"></div>
-    <p class="page-sub">Demolition materials and accessories sourced and vetted by operators with 50+ years of field experience. Explosive products are inquiry-based — pricing follows verification. Non-energetic accessories purchase directly with card or Apple Pay.</p>
-  </div>
-
-  <!-- REQUIREMENTS -->
-  <div class="requirements">
-    <div class="req-col">
-      <p class="req-eyebrow">Licensed Purchasers</p>
+  <div class="main">
+    <div class="content">
+      <p class="eyebrow">OTH LLC — Materials</p>
       <div class="amber-rule"></div>
-      <h2 class="req-title">FEL License Holders</h2>
-      <ul class="req-list">
-        <li class="req-item">
-          <span class="req-num">01</span>
-          <div>
-            <p class="req-item-title">FEL License or Permit</p>
-            <p class="req-item-desc">Federal Explosives License or Permit — current and valid.</p>
-          </div>
-        </li>
-        <li class="req-item">
-          <span class="req-num">02</span>
-          <div>
-            <p class="req-item-title">Notice of Clearance</p>
-            <p class="req-item-desc">Current notice of clearance submitted with your inquiry.</p>
-          </div>
-        </li>
-        <li class="req-item">
-          <span class="req-num">03</span>
-          <div>
-            <p class="req-item-title">Responsible Person Letter</p>
-            <p class="req-item-desc">Letter of clearance for the responsible person on the license.</p>
-          </div>
-        </li>
-      </ul>
-      <p class="req-note">Once documents are verified, we'll follow up with a call to discuss pricing, availability, and storage.</p>
+      <h1 class="title">Coming<br>Soon.</h1>
+      <p class="body">We're working on getting our demolition materials and accessories ready for sale. Explosive and non-energetic products — vetted by operators, shipped right. Check back soon.</p>
+      <p class="body">In the meantime, if you have a specific material need, reach out directly. We'll point you in the right direction.</p>
+      <a href="contact.html" class="btn-primary">Contact OTH</a>
     </div>
-
-    <div class="req-col">
-      <p class="req-eyebrow">Local Law Enforcement</p>
-      <div class="amber-rule"></div>
-      <h2 class="req-title">Local LE Requirements</h2>
-      <ul class="req-list">
-        <li class="req-item">
-          <span class="req-num">01</span>
-          <div>
-            <p class="req-item-title">Certified Breacher on Staff</p>
-            <p class="req-item-desc">Your department must have a certified breacher on staff. Hard requirement. No exceptions.</p>
-          </div>
-        </li>
-        <li class="req-item">
-          <span class="req-num">02</span>
-          <div>
-            <p class="req-item-title">Purchase Request on Letterhead</p>
-            <p class="req-item-desc">Formal purchase request on department letterhead.</p>
-          </div>
-        </li>
-        <li class="req-item">
-          <span class="req-num">03</span>
-          <div>
-            <p class="req-item-title">Follow-Up Call</p>
-            <p class="req-item-desc">An OTH operator will contact you to confirm credentials and discuss pricing and storage.</p>
-          </div>
-        </li>
-      </ul>
-      <div class="req-callout">
-        <p class="req-callout-label">No Certified Breacher Yet?</p>
-        <p class="req-callout-text">OTH offers LE breaching training. Get qualified first — then we'll take care of the rest.</p>
-        <a href="contact.html" class="req-callout-link">Learn About Breaching Training &rarr;</a>
-      </div>
-    </div>
-
-    <div class="req-col">
-      <p class="req-eyebrow">Federal Agencies &amp; Government</p>
-      <div class="amber-rule"></div>
-      <h2 class="req-title">Federal Agency Requirements</h2>
-      <ul class="req-list">
-        <li class="req-item">
-          <span class="req-num">01</span>
-          <div>
-            <p class="req-item-title">Purchase Request on Agency Letterhead</p>
-            <p class="req-item-desc">Formal purchase request on official agency letterhead. Standard government procurement format accepted.</p>
-          </div>
-        </li>
-        <li class="req-item">
-          <span class="req-num">02</span>
-          <div>
-            <p class="req-item-title">Follow-Up Call</p>
-            <p class="req-item-desc">An OTH operator will follow up to confirm details, discuss pricing, quantities, and storage.</p>
-          </div>
-        </li>
-      </ul>
-      <p class="req-note">Questions before submitting? Reach out directly. We'll point you in the right direction.</p>
-    </div>
-  </div>
-
-  <!-- EXPLOSIVE PRODUCTS -->
-  <div class="section-label">
-    <span class="section-label-text">Explosive Products</span>
-    <span class="badge badge-inquiry">Inquiry Required</span>
-  </div>
-
-  <div class="product-grid">
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Explosive</p>
-      <h3 class="product-name">Detonating Cord</h3>
-      <p class="product-desc">Multiple grain weights available. Inquire for specifications, quantity, and pricing.</p>
-      <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Submit Inquiry &rarr;</a>
-    </div>
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Explosive</p>
-      <h3 class="product-name">Blasting Caps &amp; Initiators</h3>
-      <p class="product-desc">Electric and non-electric. Inquire for availability and pricing.</p>
-      <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Submit Inquiry &rarr;</a>
-    </div>
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Explosive</p>
-      <h3 class="product-name">Sheet Explosive</h3>
-      <p class="product-desc">Flexible sheet for kicker charges and linear cutting. Low brisance options available.</p>
-      <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Submit Inquiry &rarr;</a>
-    </div>
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Explosive</p>
-      <h3 class="product-name">Block Explosive</h3>
-      <p class="product-desc">Standard demolition block. Multiple compositions available depending on application.</p>
-      <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Submit Inquiry &rarr;</a>
-    </div>
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Explosive Accessory</p>
-      <h3 class="product-name">Det Cord Accessories</h3>
-      <p class="product-desc">Connectors, junction blocks, and accessories for detonating cord systems.</p>
-      <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Submit Inquiry &rarr;</a>
-    </div>
-  </div>
-
-  <!-- NON-ENERGETIC -->
-  <div class="section-label">
-    <span class="section-label-text">Non-Energetic Accessories</span>
-    <span class="badge badge-purchase">Card &amp; Apple Pay</span>
-  </div>
-
-  <div class="product-grid">
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Accessory</p>
-      <h3 class="product-name">End Caps &amp; Crimps</h3>
-      <p class="product-desc">PVC and PEX compatible hardware for pipe and linear charge construction.</p>
-      <p class="product-price">$XX <span>/ pack</span></p>
-      <div class="pay-icons"><span class="pay-icon">Card</span><span class="pay-icon">Apple Pay</span></div>
-      <a href="contact.html" class="btn-primary" style="margin-top:auto;">Order Now</a>
-    </div>
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Accessory</p>
-      <h3 class="product-name">Tape &amp; Securing Materials</h3>
-      <p class="product-desc">Field-grade tape and securing hardware for charge placement and target attachment.</p>
-      <p class="product-price">$XX <span>/ roll</span></p>
-      <div class="pay-icons"><span class="pay-icon">Card</span><span class="pay-icon">Apple Pay</span></div>
-      <a href="contact.html" class="btn-primary" style="margin-top:auto;">Order Now</a>
-    </div>
-    <div class="product-card">
-      <div class="product-img"><span class="product-img-label">Photo Coming Soon</span></div>
-      <p class="product-cat">Accessory</p>
-      <h3 class="product-name">Safety Fuse</h3>
-      <p class="product-desc">Standard safety fuse. Consistent burn rate. Available by the foot or roll.</p>
-      <p class="product-price">$XX <span>/ ft</span></p>
-      <div class="pay-icons"><span class="pay-icon">Card</span><span class="pay-icon">Apple Pay</span></div>
-      <a href="contact.html" class="btn-primary" style="margin-top:auto;">Order Now</a>
-    </div>
-  </div>
-
-  <div class="cta-band">
-    <div>
-      <h2 class="cta-title">Not Sure What You Need?</h2>
-      <p class="cta-sub">Bring us the problem. We'll help you identify the right materials for the job.</p>
-    </div>
-    <a href="contact.html" class="btn-primary">Contact OTH</a>
   </div>
 
   <footer>
