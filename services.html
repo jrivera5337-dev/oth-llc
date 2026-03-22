@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — OTH LLC</title>
+  <meta name="description" content="OTH LLC full capability stack — explosive engraving, special charges, EOD services, government contracting, and more." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #BA7517;
+      --amber-dark: #854F0B;
+      --bg: #0e0e0e;
+      --bg-secondary: #161616;
+      --bg-tertiary: #1e1e1e;
+      --border: rgba(255,255,255,0.08);
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-tertiary: #5a5754;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); }
+    a { color: inherit; text-decoration: none; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-links a.coming { color: var(--text-tertiary); font-size: 11px; }
+    .nav-soon { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--text-tertiary); padding: 1px 5px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
+
+    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 20px; }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+    .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 13px 28px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--amber-dark); }
+
+    .page-header { padding: 64px 40px 48px; border-bottom: 0.5px solid var(--border); }
+    .page-title { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 700; text-transform: uppercase; line-height: 0.95; color: var(--text-primary); margin-bottom: 20px; }
+    .page-sub { font-size: 15px; color: var(--text-secondary); line-height: 1.8; max-width: 580px; }
+
+    .section-label { padding: 14px 40px; border-bottom: 0.5px solid var(--border); background: var(--bg-secondary); }
+    .section-label-text { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-tertiary); }
+
+    .svc-row { display: grid; grid-template-columns: 80px 1fr 1fr; border-bottom: 0.5px solid var(--border); transition: background 0.15s; }
+    .svc-row:hover { background: var(--bg-secondary); }
+    .svc-num-col { padding: 32px 20px 32px 40px; display: flex; align-items: flex-start; }
+    .svc-num { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: var(--amber); }
+    .svc-main { padding: 32px 32px 32px 0; border-right: 0.5px solid var(--border); }
+    .svc-name { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1; margin-bottom: 8px; }
+    .svc-tag { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); border: 0.5px solid var(--amber); padding: 2px 7px; border-radius: 3px; margin-bottom: 10px; }
+    .svc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; max-width: 440px; }
+    .svc-detail { padding: 32px 40px 32px 32px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+    .svc-detail-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .svc-detail-list li { font-size: 13px; color: var(--text-secondary); padding-left: 14px; position: relative; line-height: 1.5; }
+    .svc-detail-list li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-size: 11px; top: 2px; }
+
+    /* GOVERNMENT CONTRACTING SECTION */
+    .govt-section { border-bottom: 0.5px solid var(--border); }
+    .govt-header { padding: 48px 40px 32px; border-bottom: 0.5px solid var(--border); }
+    .govt-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1; margin-bottom: 16px; }
+    .govt-body { font-size: 14px; color: var(--text-secondary); line-height: 1.8; max-width: 620px; }
+    .govt-cards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 0.5px solid var(--border); }
+    .govt-card { padding: 32px; border-right: 0.5px solid var(--border); }
+    .govt-card:last-child { border-right: none; }
+    .govt-card-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    .govt-card-val { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 6px; }
+    .govt-card-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    .cta-band { padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; border-bottom: 0.5px solid var(--border); }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 6px; }
+    .cta-sub { font-size: 14px; color: var(--text-secondary); }
+
+    footer { padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 12px; color: var(--text-tertiary); }
+
+    @media (max-width: 768px) {
+      .svc-row { grid-template-columns: 1fr; }
+      .svc-num-col { padding: 24px 20px 0; }
+      .svc-main { padding: 12px 20px 24px; border-right: none; border-bottom: 0.5px solid var(--border); }
+      .svc-detail { padding: 24px 20px; }
+      .govt-cards { grid-template-columns: 1fr; }
+      .govt-card { border-right: none; border-bottom: 0.5px solid var(--border); }
+      nav { padding: 16px 20px; }
+      .page-header, .govt-header, .cta-band, footer { padding-left: 20px; padding-right: 20px; }
+      .section-label { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">OTH<span>.</span>LLC</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="services.html" class="active">Services</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <p class="section-eyebrow">OTH LLC — Full Capability</p>
+    <h1 class="page-title">What We Do.</h1>
+    <div class="amber-rule"></div>
+    <p class="page-sub">One facility. One team. Full spectrum energetics capability. Less red tape. Faster results. Done right. Reach out to discuss how OTH can solve your specific challenge.</p>
+  </div>
+
+  <!-- SIGNATURE CAPABILITIES -->
+  <div class="section-label"><p class="section-label-text">Signature Capabilities</p></div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">01</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">One of a Kind</p>
+      <h2 class="svc-name">Explosive Engraving</h2>
+      <p class="svc-desc">Precision image transfer onto metal using energetic materials. Nobody else is doing this. It requires modeling software, material science, and the hands of someone who knows exactly how much is exactly enough.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>Custom image modeling &amp; design</li>
+        <li>Brass, copper, aluminum, steel</li>
+        <li>You can push the button — no extra cost</li>
+        <li>Full video documentation included</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">02</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">Signature Service</p>
+      <h2 class="svc-name">Special Charges</h2>
+      <p class="svc-desc">Field-built, expert-narrated charge development. Shaped, linear, displacement, penetration — built and demonstrated by a Master EOD operator with 25+ years of field experience.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>Custom charge development</li>
+        <li>Expert-narrated demonstrations</li>
+        <li>Consultation &amp; application support</li>
+        <li>Details available through OTH</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GOVERNMENT & DEFENSE -->
+  <div class="section-label"><p class="section-label-text">Government &amp; Defense</p></div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">03</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">Defense R&amp;D</p>
+      <h2 class="svc-name">UAV Warhead Integration</h2>
+      <p class="svc-desc">Warhead development, airframe integration, drop munitions testing, and fragmentation pattern analysis — all in one facility. Concept to test, one stop, less red tape.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>Warhead design &amp; development</li>
+        <li>UAV airframe integration</li>
+        <li>Drop munitions testing</li>
+        <li>Fragmentation pattern analysis</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">04</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">Civilian EOD Differentiator</p>
+      <h2 class="svc-name">SMUD — Stand-off Munitions Disposal</h2>
+      <p class="svc-desc">We don't disrupt. We dispose. A stand-off munitions disposal capability not commonly offered by civilian EOD teams.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>Stand-off munitions disposal</li>
+        <li>Government contract eligible</li>
+        <li>Minimal collateral effect</li>
+        <li>Full documentation &amp; reporting</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">05</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">Contract Vehicle</p>
+      <h2 class="svc-name">Range Clearance Operations</h2>
+      <p class="svc-desc">Government contract range clearance with full capability on-site — storage, demolition, SMUD, and experienced personnel. One contract, one team, complete clearance.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>UXO survey &amp; identification</li>
+        <li>On-site explosive storage</li>
+        <li>Demolition &amp; disposal</li>
+        <li>SMUD capability included</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">06</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">R&amp;D Support</p>
+      <h2 class="svc-name">Small Scale Testing</h2>
+      <p class="svc-desc">Range, data collection, demolition, storage, and expertise — all in one place. Cut test range costs in half. Less red tape. Faster data. Built for defense contractors and energetics researchers.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>On-site range access</li>
+        <li>Data collection &amp; analysis</li>
+        <li>Explosive storage on location</li>
+        <li>Expert test design support</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LAW ENFORCEMENT -->
+  <div class="section-label"><p class="section-label-text">Law Enforcement Support</p></div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">07</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">POST Certification Pending</p>
+      <h2 class="svc-name">LE Breaching Training</h2>
+      <p class="svc-desc">Tactical explosive breaching instruction for law enforcement. Working toward POST certified instructor status. Built on real-world doctrine, not classroom theory.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>Explosive breaching fundamentals</li>
+        <li>Charge selection &amp; placement</li>
+        <li>Live fire practical exercises</li>
+        <li>Periodic scheduled courses</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-row">
+    <div class="svc-num-col"><span class="svc-num">08</span></div>
+    <div class="svc-main">
+      <p class="svc-tag">LE Partnership</p>
+      <h2 class="svc-name">Explosive Storage — Law Enforcement</h2>
+      <p class="svc-desc">Licensed explosive storage for local law enforcement agencies. Secure, compliant, managed by a Master EOD operator.</p>
+    </div>
+    <div class="svc-detail">
+      <ul class="svc-detail-list">
+        <li>Licensed &amp; compliant storage</li>
+        <li>Inventory management</li>
+        <li>Secure on-site facility</li>
+        <li>Local agency partnership</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GOVERNMENT CONTRACTING -->
+  <div class="section-label"><p class="section-label-text">Government Contracting</p></div>
+
+  <div class="govt-section">
+    <div class="govt-header">
+      <p class="section-eyebrow">Federal Procurement</p>
+      <div class="amber-rule"></div>
+      <h2 class="govt-title">Registered. Vetted. Ready.</h2>
+      <p class="govt-body">OTH LLC is registered in SAM.gov and available for federal contracting opportunities. EOD services, range clearance, SMUD, small scale testing, and UAV warhead integration — all available through standard government procurement channels. Reach out to discuss requirements, scope, and contract vehicles.</p>
+    </div>
+    <div class="govt-cards">
+      <div class="govt-card">
+        <p class="govt-card-label">CAGE Code</p>
+        <p class="govt-card-val">19YS0</p>
+        <p class="govt-card-desc">Commercial and Government Entity code — your identifier for doing business with the federal government through DLA and other agencies.</p>
+      </div>
+      <div class="govt-card">
+        <p class="govt-card-label">SAM.gov</p>
+        <p class="govt-card-val">Registered</p>
+        <p class="govt-card-desc">OTH LLC is registered and active in the System for Award Management. Search CAGE code 19YS0 to verify registration and capability data.</p>
+      </div>
+      <div class="govt-card">
+        <p class="govt-card-label">Contracting</p>
+        <p class="govt-card-val">Contact Us</p>
+        <p class="govt-card-desc">For government contracting inquiries, capability statements, or to discuss specific requirements — reach out directly. We'll respond promptly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div>
+      <h2 class="cta-title">Ready to Talk Mission?</h2>
+      <p class="cta-sub">Government, law enforcement, defense contractor, or private customer — we'll find the right solution.</p>
+    </div>
+    <a href="contact.html" class="btn-primary">Contact OTH</a>
+  </div>
+
+  <footer>
+    <div class="footer-logo">OTH<span>.</span>LLC</div>
+    <div class="footer-links">
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 Over The Horizon LLC. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
