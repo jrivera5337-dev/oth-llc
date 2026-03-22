@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aerial Ignition Impact Flare — OTH LLC</title>
+  <meta name="description" content="OTH LLC developed a drone-deployed impact-initiated incendiary payload for aerial ignition. This is where OTH began." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #BA7517;
+      --amber-dark: #854F0B;
+      --bg: #0e0e0e;
+      --bg-secondary: #161616;
+      --bg-tertiary: #1e1e1e;
+      --border: rgba(255,255,255,0.08);
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-tertiary: #5a5754;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); }
+    a { color: inherit; text-decoration: none; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+
+    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 20px; }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+    .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 13px 28px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--amber-dark); }
+
+    /* HERO */
+    .hero { padding: 72px 40px 56px; border-bottom: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .page-title { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 700; text-transform: uppercase; line-height: 0.95; color: var(--text-primary); margin-bottom: 20px; }
+    .page-title span { color: var(--amber); }
+    .hero-intro { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px; }
+    .origin-badge { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); border: 0.5px solid var(--amber); padding: 4px 10px; border-radius: 3px; margin-bottom: 16px; }
+    .hero-img { width: 100%; border-radius: 8px; object-fit: cover; aspect-ratio: 4/3; display: block; }
+
+    /* SPECS STRIP */
+    .specs { display: flex; flex-wrap: wrap; border-bottom: 0.5px solid var(--border); }
+    .spec { flex: 1; min-width: 140px; padding: 22px 28px; border-right: 0.5px solid var(--border); }
+    .spec:last-child { border-right: none; }
+    .spec-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .spec-val { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 4px; }
+    .spec-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+
+    /* STORY */
+    .story { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--border); }
+    .story-col { padding: 48px 40px; }
+    .story-col:first-child { border-right: 0.5px solid var(--border); }
+    .story-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1.05; margin-bottom: 20px; }
+    .story-body { font-size: 14px; color: var(--text-secondary); line-height: 1.85; }
+    .story-body p { margin-bottom: 14px; }
+    .story-body p:last-child { margin-bottom: 0; }
+
+    /* PHOTO GRID */
+    .photo-section { padding: 48px 40px; border-bottom: 0.5px solid var(--border); }
+    .photo-section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 24px; }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .photo-grid img { width: 100%; border-radius: 6px; object-fit: cover; aspect-ratio: 4/3; display: block; border: 0.5px solid var(--border); transition: opacity 0.2s; }
+    .photo-grid img:hover { opacity: 0.85; }
+    .photo-caption { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-top: 6px; }
+
+    /* MOD 2 SECTION */
+    .mod2 { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--border); }
+    .mod2-left { padding: 48px 40px; border-right: 0.5px solid var(--border); }
+    .mod2-right { display: grid; grid-template-columns: 1fr 1fr; }
+    .mod2-img { border-bottom: 0.5px solid var(--border); border-right: 0.5px solid var(--border); overflow: hidden; }
+    .mod2-img:nth-child(2) { border-right: none; }
+    .mod2-img:nth-child(3) { border-bottom: none; }
+    .mod2-img:nth-child(4) { border-right: none; border-bottom: none; }
+    .mod2-img img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 1; }
+    .mod-badge { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); border: 0.5px solid var(--amber); padding: 4px 10px; border-radius: 3px; margin-bottom: 16px; }
+
+    /* IGNITION */
+    .ignition { border-bottom: 0.5px solid var(--border); }
+    .ignition-header { padding: 48px 40px 28px; }
+    .ignition-photos { display: grid; grid-template-columns: 1fr 1fr; border-top: 0.5px solid var(--border); }
+    .ignition-photo { overflow: hidden; border-right: 0.5px solid var(--border); }
+    .ignition-photo:last-child { border-right: none; }
+    .ignition-photo img { width: 100%; object-fit: cover; display: block; max-height: 480px; }
+
+    /* CTA */
+    .cta-band { padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; border-bottom: 0.5px solid var(--border); }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 6px; }
+    .cta-sub { font-size: 14px; color: var(--text-secondary); }
+
+    footer { padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 12px; color: var(--text-tertiary); }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 20px; }
+      .story { grid-template-columns: 1fr; }
+      .story-col:first-child { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .photo-grid { grid-template-columns: 1fr 1fr; }
+      .mod2 { grid-template-columns: 1fr; }
+      .mod2-left { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .ignition-photos { grid-template-columns: 1fr; }
+      .ignition-photo { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .specs { flex-direction: column; }
+      .spec { border-right: none; border-bottom: 0.5px solid var(--border); }
+      nav { padding: 16px 20px; }
+      .photo-section, .ignition-header, .cta-band, footer { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">OTH<span>.</span>LLC</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="services.html">Services</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <span class="origin-badge">Where OTH Began</span>
+      <p class="section-eyebrow">R&amp;D Project</p>
+      <h1 class="page-title">Aerial Ignition<br>Impact <span>Flare.</span></h1>
+      <div class="amber-rule"></div>
+      <p class="hero-intro">A drone-deployed, impact-initiated incendiary payload developed for a customer with a specific aerial ignition requirement. The device had to be small enough for a commercial drone, reliable enough to initiate at ground impact, and capable of producing sustained ignition temperature. This project is where OTH LLC began.</p>
+      <p class="hero-intro">Customer identity is not disclosed.</p>
+    </div>
+    <img src="aiif-device-scale.jpeg" alt="AIIF device with scale reference" class="hero-img" />
+  </div>
+
+  <!-- SPECS -->
+  <div class="specs">
+    <div class="spec">
+      <p class="spec-label">Burn Temperature</p>
+      <p class="spec-val">4,000°F</p>
+      <p class="spec-desc">Sustained incendiary output capable of igniting target materials on contact</p>
+    </div>
+    <div class="spec">
+      <p class="spec-label">Burn Duration</p>
+      <p class="spec-val">20+ sec</p>
+      <p class="spec-desc">More than sufficient dwell time to initiate sustained ignition</p>
+    </div>
+    <div class="spec">
+      <p class="spec-label">Initiation</p>
+      <p class="spec-val">Impact</p>
+      <p class="spec-desc">Inertial impact initiation — no electrical connection required</p>
+    </div>
+    <div class="spec">
+      <p class="spec-label">Deployment</p>
+      <p class="spec-val">Drone</p>
+      <p class="spec-desc">Designed for deployment from a small commercial UAV platform</p>
+    </div>
+    <div class="spec">
+      <p class="spec-label">Housing</p>
+      <p class="spec-val">3D Printed</p>
+      <p class="spec-desc">Fin-stabilized printed tail section — simple, low cost, field-replicable</p>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <div class="story">
+    <div class="story-col">
+      <p class="section-eyebrow">The Problem</p>
+      <div class="amber-rule"></div>
+      <h2 class="story-title">A Customer Needed Fire.<br>Delivered From the Air.</h2>
+      <div class="story-body">
+        <p>The requirement was specific — a payload that could be carried and released by a small commercial drone, survive the drop, initiate reliably at ground impact, and produce enough sustained heat to ignite target materials.</p>
+        <p>No electrical connections. No complex fuzing. Simple, low-cost, repeatable. The kind of problem that looks straightforward until you start working through the physics of impact initiation, burn rate, and payload geometry at small scale.</p>
+        <p>OTH solved it. The result was a fin-stabilized, impact-initiated incendiary device that burns at 4,000°F for more than 20 seconds — enough time to do the work it was designed to do.</p>
+      </div>
+    </div>
+    <div class="story-col">
+      <p class="section-eyebrow">The Approach</p>
+      <div class="amber-rule"></div>
+      <h2 class="story-title">Simple Methods.<br>Effective Results.</h2>
+      <div class="story-body">
+        <p>The initiation system uses simple inertial mechanics — no electronics, no batteries, no signal required. The device arms during flight and initiates on contact with the ground. Reliability comes from the physics, not from complexity.</p>
+        <p>The housing was 3D printed — fin-stabilized for consistent nose-down orientation during drop. Safety pins prevent inadvertent initiation during handling and deployment. The incendiary payload was selected and sized to meet the burn temperature and duration requirements within the weight and volume constraints of the target drone platform.</p>
+        <p>This project established the OTH approach to R&amp;D — iterate, test, refine. Build what works, not what looks good on paper.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEVICE PHOTOS -->
+  <div class="photo-section">
+    <p class="section-eyebrow">The Device</p>
+    <div class="amber-rule"></div>
+    <h2 class="photo-section-title">Build &amp; Detail</h2>
+    <div class="photo-grid">
+      <div>
+        <img src="aiif-housing-detail.jpeg" alt="3D printed tail section with safety pins" />
+        <p class="photo-caption">3D printed fin housing — safety pins installed</p>
+      </div>
+      <div>
+        <img src="aiif-payload-detail.jpeg" alt="Incendiary payload with OTH mark" />
+        <p class="photo-caption">Incendiary payload — OTH mark applied</p>
+      </div>
+      <div>
+        <img src="aiif-logo.png" alt="OTH mark on payload" style="object-fit:contain;background:var(--bg-secondary);" />
+        <p class="photo-caption">OTH mark — applied to each unit</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOD 2 -->
+  <div class="mod2">
+    <div class="mod2-left">
+      <span class="mod-badge">Mod 2</span>
+      <p class="section-eyebrow">Second Generation</p>
+      <div class="amber-rule"></div>
+      <h2 class="story-title">Triangular Configuration.</h2>
+      <div class="story-body">
+        <p>The second iteration of the AIIF explored a triangular cross-section payload geometry. The goal was to maximize the use of physical space within the drone's deployment mechanism — fitting more incendiary material into the same volume constraint.</p>
+        <p>The triangular form factor allows tighter packing in multi-unit deployment configurations and provides a different surface-area-to-mass ratio for ignition performance testing.</p>
+        <p>Iteration is the process. Each generation answers a question the last one raised.</p>
+      </div>
+    </div>
+    <div class="mod2-right">
+      <div class="mod2-img">
+        <img src="aiif-mod2-triangle-scale.jpeg" alt="Mod 2 triangular flare in hand for scale" />
+      </div>
+      <div class="mod2-img">
+        <img src="aiif-mod2-triangle.jpeg" alt="Mod 2 triangular flare rear view" />
+      </div>
+    </div>
+  </div>
+
+  <!-- IGNITION -->
+  <div class="ignition">
+    <div class="ignition-header">
+      <p class="section-eyebrow">Ground Test — Impact Initiation</p>
+      <div class="amber-rule"></div>
+      <h2 class="story-title" style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;color:var(--text-primary);">It Works.</h2>
+      <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;max-width:620px;margin-top:12px;">Ground impact test — the device initiates on contact and produces immediate incendiary output. The starburst pattern at ground level is the initiation event. What follows is 20+ seconds of 4,000°F burn.</p>
+    </div>
+    <div class="ignition-photos" style="grid-template-columns:1fr;">
+      <div class="ignition-photo" style="border-right:none;">
+        <img src="aiif-ignition-1.PNG" alt="Impact initiation starburst" />
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div>
+      <h2 class="cta-title">Have a Similar Requirement?</h2>
+      <p class="cta-sub">OTH develops custom energetic solutions for specific customer requirements. Reach out and let's talk about what you need.</p>
+    </div>
+    <a href="contact.html" class="btn-primary">Contact OTH</a>
+  </div>
+
+  <footer>
+    <div class="footer-logo">OTH<span>.</span>LLC</div>
+    <div class="footer-links">
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 Over The Horizon LLC. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
