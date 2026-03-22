@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explosive Engraving — OTH LLC</title>
+  <meta name="description" content="Precision image transfer onto metal using energetic materials. Custom logos, lettering, and geometric patterns. Nobody else is doing this." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #BA7517;
+      --amber-dark: #854F0B;
+      --bg: #0e0e0e;
+      --bg-secondary: #161616;
+      --bg-tertiary: #1e1e1e;
+      --border: rgba(255,255,255,0.08);
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-tertiary: #5a5754;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text-primary); }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; flex-wrap: wrap; gap: 12px; }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--amber); }
+    .nav-links a.coming { color: var(--text-tertiary); font-size: 11px; }
+    .nav-soon { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); border: 0.5px solid var(--text-tertiary); padding: 1px 5px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
+
+    /* SHARED */
+    .amber-rule { width: 28px; height: 2px; background: var(--amber); margin-bottom: 20px; }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+    .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--amber); color: #fff; border: none; padding: 14px 32px; border-radius: 4px; cursor: pointer; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--amber-dark); }
+    .btn-ghost { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: var(--text-secondary); border: 0.5px solid rgba(255,255,255,0.2); padding: 14px 32px; border-radius: 4px; cursor: pointer; transition: all 0.2s; display: inline-block; }
+    .btn-ghost:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.4); }
+
+    /* HERO */
+    .hero { padding: 72px 40px 56px; border-bottom: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .page-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+    .page-title { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 700; text-transform: uppercase; line-height: 0.95; color: var(--text-primary); margin-bottom: 20px; }
+    .hero-intro { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+    .unique-badge { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); border: 0.5px solid var(--amber); padding: 4px 10px; border-radius: 3px; margin-bottom: 16px; }
+    .img-placeholder { background: var(--bg-secondary); border: 0.5px solid var(--border); border-radius: 12px; aspect-ratio: 4/3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    .img-placeholder-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-tertiary); }
+
+    /* EXPERIENCE */
+    .experience { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--border); background: var(--bg-secondary); }
+    .exp-left { padding: 48px 40px; border-right: 0.5px solid var(--border); }
+    .exp-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1; margin-bottom: 20px; }
+    .exp-title span { color: var(--amber); }
+    .exp-body { font-size: 14px; color: var(--text-secondary); line-height: 1.85; }
+    .exp-body p { margin-bottom: 14px; }
+    .exp-body p:last-child { margin-bottom: 0; }
+    .exp-right { padding: 48px 40px; display: flex; flex-direction: column; gap: 0; }
+    .exp-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 0.5px solid var(--border); }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .exp-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; color: var(--amber); min-width: 24px; padding-top: 2px; }
+    .exp-item-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 4px; }
+    .no-cost { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); border: 0.5px solid var(--amber); padding: 2px 6px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
+    .exp-item-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+    /* HOW IT WORKS */
+    .how-header { padding: 48px 40px 32px; }
+    .how-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); }
+    .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+    .step { padding: 32px 28px; border-right: 0.5px solid var(--border); }
+    .step:last-child { border-right: none; }
+    .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 12px; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 10px; line-height: 1.1; }
+    .step-body { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* MATERIALS */
+    .materials { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--border); }
+    .mat-col { padding: 48px 40px; }
+    .mat-col:first-child { border-right: 0.5px solid var(--border); }
+    .mat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 20px; }
+    .mat-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .mat-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); padding: 8px 18px; border: 0.5px solid var(--border); border-radius: 3px; transition: border-color 0.2s; }
+    .mat-tag:hover { border-color: var(--amber); color: var(--amber); }
+    .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+    .img-small { background: var(--bg-secondary); border: 0.5px solid var(--border); border-radius: 8px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+    .img-small-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); text-align: center; padding: 8px; }
+
+    /* PRICING */
+    .pricing { padding: 48px 40px; border-bottom: 0.5px solid var(--border); }
+    .pricing-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 32px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; position: relative; }
+    .pricing-ribbon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); background: #c0392b; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 14px 80px; white-space: nowrap; z-index: 10; pointer-events: none; box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+    .price-card { border: 0.5px solid var(--border); border-radius: 12px; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition: border-color 0.2s; opacity: 0.45; }
+    .price-card:hover { border-color: var(--amber); }
+    .price-card.featured { border-color: var(--amber); }
+    .price-tier { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); }
+    .price-name { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); line-height: 1; }
+    .price-val { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 700; color: var(--text-primary); line-height: 1; }
+    .price-val span { font-size: 16px; color: var(--text-secondary); font-weight: 400; }
+    .price-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+    .price-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .price-list li { font-size: 13px; color: var(--text-secondary); padding-left: 14px; position: relative; line-height: 1.5; }
+    .price-list li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-size: 11px; top: 3px; }
+
+    /* CTA BAND */
+    .cta-band { padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; border-bottom: 0.5px solid var(--border); }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-bottom: 6px; }
+    .cta-sub { font-size: 14px; color: var(--text-secondary); }
+
+    /* FOOTER */
+    footer { padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-copy { font-size: 12px; color: var(--text-tertiary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 20px; }
+      .experience { grid-template-columns: 1fr; }
+      .exp-left { border-right: none; border-bottom: 0.5px solid var(--border); padding: 40px 20px; }
+      .exp-right { padding: 40px 20px; }
+      .how-steps { grid-template-columns: 1fr 1fr; }
+      .materials { grid-template-columns: 1fr; }
+      .mat-col:first-child { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .pricing-grid { grid-template-columns: 1fr; }
+      nav { padding: 16px 20px; }
+      .how-header, .pricing, .cta-band, footer { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">OTH<span>.</span>LLC</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="engraving.html" class="active">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" class="coming">Services <span class="nav-soon">Soon</span></a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <span class="unique-badge">One of a Kind</span>
+      <p class="page-eyebrow">Explosive Engraving</p>
+      <h1 class="page-title">Anyone Can<br>Laser Engrave.<br>We Use <span style="color:#BA7517;">Explosives.</span></h1>
+      <div class="amber-rule"></div>
+      <p class="hero-intro">Precision image transfer onto metal using energetic materials. Custom logos, lettering, and geometric patterns — permanently marked by a controlled explosive event. No one else is doing this.</p>
+    </div>
+    <div class="img-placeholder">
+      <p class="img-placeholder-label">Photo Coming Soon</p>
+    </div>
+  </div>
+
+  <div class="experience">
+    <div class="exp-left">
+      <p class="section-eyebrow">The Experience</p>
+      <div class="amber-rule"></div>
+      <h2 class="exp-title">You Can Push<br>The <span>Button.</span></h2>
+      <div class="exp-body">
+        <p>Every engraving is filmed — the setup, the charge, the detonation, the result. You get the video. You get the piece. You get the story.</p>
+        <p>If you want to be there when it happens, we make that possible. Stand at a safe distance, supervised by a Master EOD operator, and initiate the charge yourself. Your design. Your metal. Your shot.</p>
+        <p>No extra cost. Just show up ready.</p>
+      </div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-item">
+        <span class="exp-num">01</span>
+        <div>
+          <p class="exp-item-title">Full Video Documentation</p>
+          <p class="exp-item-desc">Setup, charge placement, detonation, and result — all filmed and delivered with your piece.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-num">02</span>
+        <div>
+          <p class="exp-item-title">Be There In Person</p>
+          <p class="exp-item-desc">Customers are welcome on-site in Ridgecrest, CA to watch the process and see their piece made.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-num">03</span>
+        <div>
+          <p class="exp-item-title">Push The Button <span class="no-cost">No Extra Cost</span></p>
+          <p class="exp-item-desc">Supervised by a Master EOD operator, you initiate the charge yourself. Your design. Your detonation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-header">
+    <p class="section-eyebrow">The Process</p>
+    <div class="amber-rule"></div>
+    <h2 class="how-title">How It Works</h2>
+  </div>
+  <div class="how-steps">
+    <div class="step">
+      <p class="step-num">Step 01</p>
+      <h3 class="step-title">You Submit Your Design</h3>
+      <p class="step-body">Logo, text, or geometric pattern. We work from your artwork and advise on what translates well to the process.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">Step 02</p>
+      <h3 class="step-title">We Model It</h3>
+      <p class="step-body">Your design is built in modeling software and translated into an energetic layout. This is where the expertise lives — getting the geometry exactly right.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">Step 03</p>
+      <h3 class="step-title">We Execute</h3>
+      <p class="step-body">Energetic materials are applied with precision and initiated. The detonation transfers the image permanently into the metal surface.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">Step 04</p>
+      <h3 class="step-title">You Receive the Piece</h3>
+      <p class="step-body">A finished, one-of-a-kind metal piece — engraved by explosion, documented on video. Nothing else produces a mark quite like it.</p>
+    </div>
+  </div>
+
+  <div class="materials">
+    <div class="mat-col">
+      <p class="section-eyebrow">Materials</p>
+      <div class="amber-rule"></div>
+      <h2 class="mat-title">What We Work With</h2>
+      <div class="mat-grid">
+        <span class="mat-tag">Brass</span>
+        <span class="mat-tag">Copper</span>
+        <span class="mat-tag">Aluminum</span>
+        <span class="mat-tag">Steel</span>
+      </div>
+    </div>
+    <div class="mat-col">
+      <p class="section-eyebrow">Design Types</p>
+      <div class="amber-rule"></div>
+      <h2 class="mat-title">What We Can Produce</h2>
+      <div class="img-grid">
+        <div class="img-small"><span class="img-small-label">Custom Logos</span></div>
+        <div class="img-small"><span class="img-small-label">Text &amp; Lettering</span></div>
+        <div class="img-small"><span class="img-small-label">Geometric Patterns</span></div>
+        <div class="img-small"><span class="img-small-label">Photos Coming Soon</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing">
+    <p class="section-eyebrow">Pricing</p>
+    <div class="amber-rule"></div>
+    <h2 class="pricing-title">What It Costs</h2>
+    <div class="pricing-grid">
+      <div class="pricing-ribbon">Contact Us For Pricing</div>
+      <div class="price-card">
+        <p class="price-tier">Tier 01</p>
+        <p class="price-name">Small</p>
+        <p class="price-val">$XXX <span>/ piece</span></p>
+        <p class="price-desc">Smaller format pieces. Single design element. Ideal for plaques, badges, and personal pieces.</p>
+        <ul class="price-list">
+          <li>Up to [X]" x [X]"</li>
+          <li>One design element</li>
+          <li>Brass, copper, aluminum, or steel</li>
+          <li>[X] week turnaround</li>
+        </ul>
+        <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Order Small</a>
+      </div>
+      <div class="price-card featured">
+        <p class="price-tier">Tier 02</p>
+        <p class="price-name">Medium</p>
+        <p class="price-val">$XXX <span>/ piece</span></p>
+        <p class="price-desc">Mid-format pieces with more design complexity. Popular for awards, gifts, and display pieces.</p>
+        <ul class="price-list">
+          <li>Up to [X]" x [X]"</li>
+          <li>Multi-element designs</li>
+          <li>Brass, copper, aluminum, or steel</li>
+          <li>[X] week turnaround</li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="margin-top:auto;">Order Medium</a>
+      </div>
+      <div class="price-card">
+        <p class="price-tier">Tier 03</p>
+        <p class="price-name">Large</p>
+        <p class="price-val">$XXX <span>/ piece</span></p>
+        <p class="price-desc">Large format. Complex designs welcome. Contact us first — larger pieces require a consult before order.</p>
+        <ul class="price-list">
+          <li>Up to [X]" x [X]"</li>
+          <li>Complex multi-element designs</li>
+          <li>Brass, copper, aluminum, or steel</li>
+          <li>[X] week turnaround</li>
+        </ul>
+        <a href="contact.html" class="btn-ghost" style="margin-top:auto;">Inquire Large</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div>
+      <h2 class="cta-title">Ready To Order?</h2>
+      <p class="cta-sub">Have a design in mind? Reach out and we'll walk you through the process.</p>
+    </div>
+    <a href="contact.html" class="btn-primary">Contact OTH</a>
+  </div>
+
+  <footer>
+    <div class="footer-logo">OTH<span>.</span>LLC</div>
+    <div class="footer-links">
+      <a href="engraving.html">Engraving</a>
+      <a href="special-charges.html">Special Charges</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="legal.html">Legal</a>
+    </div>
+    <div class="footer-copy">© 2026 Over The Horizon LLC. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
